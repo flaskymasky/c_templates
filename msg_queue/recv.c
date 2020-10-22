@@ -63,6 +63,14 @@ int main()
 	}
 
 	printf("Received: %s\n", msg_buf.mtext);
+	
+	// delete msg queue
+	
+	if ( msgctl(msq_id, IPC_RMID, 0) == -1 )
+	{
+		perror("");
+		exit(1);
+	}
 
 
 	return 0;
