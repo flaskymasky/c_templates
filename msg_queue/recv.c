@@ -48,14 +48,14 @@ int main()
 		exit(1);
 	}
 
-	// get more specific info from msg queue # note cast to ( struct msqid_ds *) !!! MANDATORY
+	// get more specific info from msg queue # note cast to ( struct msqid_ds *)
 	if ( msgctl(msq_id, MSG_STAT, (struct msqid_ds *)&info_msg) == -1 )
 	{
 		perror("");
 		exit(1);
 	}
 
-	// receive msg					      all , truncate
+	// receive msg					      all , truncate is to long
 	if ( msgrcv(msq_id, &msg_buf, sizeof((msg_buf.mtext)), 0, MSG_NOERROR) == -1 )
 	{
 		perror("");
