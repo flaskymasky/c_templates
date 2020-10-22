@@ -47,7 +47,7 @@ int main()
 		exit(1);
 	}
 
-	// get more specific info from msg queue # note cast to ( struct msqid_ds *) !!! MANDATORY
+	// get more specific info from msg queue # note cast to ( struct msqid_ds *) 
 	if ( msgctl(msq_id, MSG_STAT, (struct msqid_ds *)&info) == -1 )
 	{
 		perror("");
