@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
 	close(shm_id);
 		
-
+	sem_unlink(file_name)
 
 	return 0;
 }
